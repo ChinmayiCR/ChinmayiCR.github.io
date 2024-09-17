@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Chinmayi Ramakrishna</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Chinmayi Ramakrishna</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profilePic.jpg" alt="Chinmayi Profile Picture" style="border-radius: 50%;" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Chinmayi Ramakrishna</h1>
+        <p class="section__text__p2">Software Developer</p>
+        <!-- <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="location.href='https://www.linkedin.com/in/chinmayi-ramakrishna/'"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">
+            Contact Info
+          </button>
+        </div> -->
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/chinmayi-ramakrishna/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/Chinmayi27'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <img
+              src="./assets/experience.png"
+              alt="Experience icon"
+              class="icon"
+            />
+            <h3>Experience</h3>
+            <p>2 years <br />Software Development</p>
+          </div>
+          <div class="details-container">
+            <img
+            src="./assets/education.png"
+            alt="Education icon"
+            class="icon"
+            />
+            <h3>Education</h3>
+            <p>Bachelors Degree in Information Technology<br />Masters Degree in Computer Science</p>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>
+            I am inspired by the possibilities of small advancements in technology having a huge impact in daily life. As a backend engineer in Walmart, I developed and leveraged several software tools that enhanced Continuous Development and Integration of an ML developer. My responsibilities included but not limited to database design and review, micro service development in JAVA, backend development of Walmart's native ML platform to automate the development to production cycle of a data scientist and extensively provided customer support for features and development across the ML platform. I collaborated closely with teammates in an agile environment, engaging in thorough sprint planning, documentation, and reviews. My technical expertise spans multiple programming languages such as Java, Python, and TypeScript, along with database management using MySQL and Azure SQL. I utilized Shell Scripting and JavaScript for automation and web development, employing React for user interface design. Key tools in my toolkit included Kubernetes and Docker for container orchestration, Google Kubernetes Engine (GKE), and cloud platforms such as Google Cloud Platform (GCP) and Azure. I also implemented workflow automation using Airflow.
+          </p>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="container">
+            <div class="column-20">
+              <h2 class="experience-sub-title">Software Developer at Walmart</h2>
+            </div>
+            <div class="column column-80">
+              <div class="article-container">
+                <article>
+                  <img
+                    src="./assets/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>Enhanced ML Operations Pipelines</h3>
+                    <p>Improved efficiency of people using ML Ops batch pipelines by 52% by building
+                      features such as toggling between various runtime environments, base operating systems and customizing resource
+                      allocations.</p>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./assets/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>API-Driven Microservices</h3>
+                    <p>Implemented an API driven platform to onboard 3 types of Generative AI application requests
+                      enforcing security policies on AI/ML developments in Walmart and integrated with services like JIRA, Service Now for
+                      automation reducing user effort by 72%.</p>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./assets/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>ML Model Cataloging</h3>
+                    <p>Built a web app cataloging system with metrics dashboard for tracking and auto-
+                      ingesting over 1000 models from 2 platforms and improving visibility to people by 76%.</p>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./assets/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>GenAI Application Onboording Automation</h3>
+                    <p>Integrated with tools like JIRA, Service Now for automation of ticket creation tasks to reduce human intervention by 85%.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="experience-details-container"></div>
+        <div class="about-containers">
+          <div class="container">
+            <div class="column-20">
+              <h2 class="experience-sub-title">Summer Software Intern at John Deere</h2>
+            </div>
+            <div class="column column-80">
+              <div class="article-container">
+                <article>
+                  <img
+                    src="./assets/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>Choice between Flutter and React Native</h3>
+                    <p>Performed statistical analysis on discussion forums such as Github, Stack Overflow to choose React Native enhancing
+                      adaptability by 85%.</p>
+                  </div>
+                </article>
+                <article>
+                  <img
+                    src="./assets/checkmark.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <div>
+                    <h3>Mobile Application Development</h3>
+                    <p>Implemented a modernized, hybrid application in React Native for customer acquisition module to increase ease of
+                      application usage by 67%.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+      <img
+      src="./assets/arrow.png"
+      alt="Arrow icon"
+      class="icon arrow"
+      onclick="location.href='#projects'"/>
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/cicd.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Customized CI/CD Pipeline</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Chinmayi27/ci-cd-pipeline'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/blockchain.png"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Blockchain Web Application</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/ChinmayiCR/Blockchain-web-app'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/musicCNN.jpg"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">CNN Based Music Retrieval</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Chinmayi27/Evaluation-of-CNN-based-Automatic-Music-Tags-Retrieval'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='#contact'"
+      />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:chinmayicr27@gmail.com">chinmayicr27@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
+        </div>
+      </div>
+      <!-- <img
+      src="./assets/arrowup.png"
+      alt="Arrow icon"
+      class="icon arrow-up"
+      onclick="location.href='#'"/> -->
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Chinmayi Ramakrishna. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
