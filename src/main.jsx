@@ -25,9 +25,9 @@ const projects = [
 ];
 
 const skillGroups = [
-  ["Languages & development", "Java", "Python", "JavaScript", "TypeScript", "SQL", "Node.js", "React"],
-  ["Cloud & infrastructure", "GCP", "Kubernetes", "Docker", "Jenkins", "Kafka", "Linux"],
-  ["Tools & practices", "Splunk", "JIRA", "JUnit", "Agile", "Confluence", "ServiceNow", "CI/CD", "Airflow", "API testing"],
+  ["Programming languages", "Java", "Python", "JavaScript", "TypeScript", "SQL", "Node.js", "React", "Go", "C#", ".NET"],
+  ["Cloud & infrastructure", "AWS", "GCP", "Kubernetes", "Docker", "Jenkins", "Kafka"],
+  ["Tools & practices", "Splunk", "JIRA", "JUnit", "Agile", "Confluence", "ServiceNow", "CI/CD", "Airflow", "API testing", "REST APIs"],
 ];
 
 const experience = [
@@ -70,6 +70,30 @@ const experience = [
   },
 ];
 
+const education = [
+  {
+    university: "The University of Texas at Dallas",
+    degree: "Master's in Computer Science",
+    location: "Dallas, United States",
+    specialization: "Cyber Defense",
+    date: "August 2024 — May 2026",
+    points: [
+      "Affiliations/Awards: Grace Hopper Scholar (chosen out of 500+ applicants)",
+      "Relevant coursework: Advanced Operating Systems, Database Systems, Data Structures",
+    ],
+  },
+  {
+    university: "National Institute of Technology Karnataka",
+    degree: "Bachelor's in Information Technology",
+    location: "Surathkal, India",
+    specialization: "",
+    date: "July 2018 — April 2022",
+    points: [
+        "Relevant coursework: Object-Oriented Programming, Web Application Development, Computer Networks",
+    ],
+  }
+];
+
 function SectionLabel({ children }) {
   return <p className="mb-4 text-[11px] font-bold uppercase tracking-[.22em] text-moss">{children}</p>;
 }
@@ -84,6 +108,7 @@ function App() {
             <a className="nav-link" href="#work">Businesses</a>
             <a className="nav-link" href="#about">About</a>
             <a className="nav-link" href="#experience">Experience</a>
+            <a className="nav-link" href="#education">Education</a>
           </div>
           <a href="mailto:hello@chinmayi.dev" className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-moss">
             Let’s talk <ArrowUpRight size={14} />
@@ -219,8 +244,20 @@ function App() {
           </div>
         </section>
 
+        <section id="education" className="scroll-mt-24 border-t border-line py-20 md:py-24">
+          <div className="mb-12"><SectionLabel>04 / Where I studied</SectionLabel><h2 className="section-heading">Education<span className="text-moss">.</span></h2></div>
+          <div className="space-y-0">
+            {education.map((study, i) => (
+              <article key={study.university} className="grid gap-4 border-t border-line py-8 md:grid-cols-[.7fr_1.3fr] md:gap-12">
+                <div><p className="font-display text-2xl">{study.degree}</p><p className="mt-2 text-sm text-muted">{study.specialization}</p><p className="mt-2 text-xs text-moss">{study.date}</p><p className="mt-2 text-xs text-[black] text-moss">{study.location}</p></div>
+                <ul className="space-y-3">{study.points.map(point => <li key={point} className="flex gap-3 text-sm leading-7 text-muted"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-moss" />{point}</li>)}</ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="grid gap-8 rounded-[30px] bg-[#f8e1e4] px-7 py-12 md:grid-cols-[1fr_auto] md:items-end md:px-12 md:py-14">
-          <div><SectionLabel>04 / Next chapter</SectionLabel><h2 className="max-w-2xl font-display text-4xl leading-tight md:text-5xl">Have a good idea?<br /><span className="italic text-moss">Let’s make it real.</span></h2><p className="mt-4 max-w-lg text-sm leading-7 text-muted">I’m always happy to connect about interesting products, engineering challenges and creative collaborations.</p></div>
+          <div><SectionLabel>05 / Next chapter</SectionLabel><h2 className="max-w-2xl font-display text-4xl leading-tight md:text-5xl">Have a good idea?<br /><span className="italic text-moss">Let’s make it real.</span></h2><p className="mt-4 max-w-lg text-sm leading-7 text-muted">I’m always happy to connect about interesting products, engineering challenges and creative collaborations.</p></div>
           <a href="mailto:hello@chinmayi.dev" className="inline-flex w-fit items-center gap-3 rounded-full bg-ink px-6 py-4 text-sm font-semibold text-white transition hover:bg-moss">Say hello <ArrowUpRight size={16} /></a>
         </section>
 
