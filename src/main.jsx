@@ -9,7 +9,7 @@ const projects = [
     type: "Business website · Web development",
     description: "A welcoming digital home for a hospitality business, designed to make exploring the space and getting in touch feel effortless.",
     url: "https://mathrushreebhavana.vercel.app/",
-    image: "../assets/mathrushree.png",
+    image: "/assets/mathrushree.png",
     size: "tall",
     number: "01",
   },
@@ -18,7 +18,7 @@ const projects = [
     type: "Booking platform · Full stack",
     description: "An AI-assisted booking experience built for 100+ events and a growing 10K+ user base.",
     url: "https://eyeshade-photography.vercel.app/",
-    image: "../assets/eyeshade.png",
+    image: "/assets/eyeshade.png",
     size: "short",
     number: "02",
   },
@@ -121,7 +121,7 @@ function App() {
             <div className="absolute -bottom-7 -left-7 h-36 w-36 rounded-full bg-[#f6dfe2]" />
             <div className="relative overflow-hidden rounded-[48%_48%_18px_18px] bg-[#f6dfe2]">
               <img
-                src="../assets/profilePic.jpeg"
+                src="/assets/profilePic.jpeg"
                 alt="Warm, minimal creative workspace"
                 className="h-[470px] w-full object-cover opacity-90 md:h-[560px]"
               />
