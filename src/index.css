@@ -9,3 +9,331 @@ body { margin: 0; min-width: 320px; }
 .nav-link { transition: color .2s ease; }
 .nav-link:hover { color: #c8798e; }
 .section-heading { font-family: "Playfair Display", serif; font-size: clamp(2.7rem, 5vw, 4.3rem); line-height: 1.04; letter-spacing: -.045em; }
+
+/* Smooth section transitions */
+[data-section-fade] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 800ms ease,
+    transform 800ms ease;
+}
+
+[data-section-fade].section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  [data-section-fade] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Floating skill bubbles */
+.skill-bubble {
+  animation: bubbleFloat 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Organic floating movement */
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Pause floating while interacting */
+.skill-bubble:hover {
+  animation-play-state: paused;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skill-bubble {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Education timeline animation */
+#education article {
+  transition:
+    border-color 400ms ease,
+    background-color 400ms ease,
+    box-shadow 400ms ease;
+}
+
+#education article:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(39, 37, 31, 0.035);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #education article,
+  #education article * {
+    transition: none !important;
+  }
+}
+
+/* Hero heading entrance */
+.hero-heading {
+  animation: heroReveal 1s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Name hover interaction */
+.hero-name {
+  display: inline-block;
+  transition:
+    transform 400ms ease,
+    color 400ms ease;
+}
+
+.hero-name:hover {
+  transform: translateY(-5px);
+  color: #849276;
+}
+
+/* Moss shimmer */
+.hero-role {
+  background: linear-gradient(
+    110deg,
+    currentColor 30%,
+    #aab59c 48%,
+    currentColor 65%
+  );
+  background-size: 250% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: mossShimmer 7s ease-in-out infinite;
+}
+
+@keyframes mossShimmer {
+  0%, 100% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animated underline */
+.hero-underline {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background: #849276;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underlineDraw 1s ease-out 1s forwards;
+}
+
+@keyframes underlineDraw {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-heading,
+  .hero-role,
+  .hero-underline {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
+
+/* Main portrait card */
+.profile-card {
+  transform-style: preserve-3d;
+  transition: transform 300ms ease-out;
+  will-change: transform;
+}
+
+/* Decorative orbit */
+.profile-ring {
+  animation: ringFloat 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ringFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-7px, 9px) rotate(12deg);
+  }
+}
+
+/* Background circle */
+.profile-orbit {
+  animation: orbitFloat 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes orbitFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Floating accent dot */
+.profile-dot {
+  animation: dotPulse 3s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+/* Side caption */
+.profile-caption {
+  animation: captionFloat 5s ease-in-out infinite;
+}
+
+@keyframes captionFloat {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+/* Mobile and accessibility */
+@media (hover: none) {
+  .profile-card {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-ring,
+  .profile-orbit,
+  .profile-dot,
+  .profile-caption {
+    animation: none !important;
+  }
+
+  .profile-card,
+  .profile-card * {
+    transition: none !important;
+  }
+}
+
+.logo-mark {
+  animation: logoFloat 3.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.logo-text {
+  transition: letter-spacing 400ms ease;
+}
+
+.logo-dot {
+  color: #849276;
+  display: inline-block;
+  animation: dotShine 2.5s ease-in-out infinite;
+}
+
+.logo-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(132, 146, 118, 0.35) 50%,
+    transparent 75%
+  );
+  background-size: 250% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  pointer-events: none;
+  animation: logoShimmer 4s ease-in-out infinite;
+}
+
+.logo-mark:hover .logo-text {
+  letter-spacing: 0.08em;
+}
+
+.logo-mark:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -2px;
+  }
+}
+
+@keyframes dotShine {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
+@keyframes logoShimmer {
+  0%, 70%, 100% {
+    background-position: 100% 50%;
+  }
+  35% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark,
+  .logo-dot,
+  .logo-shine {
+    animation: none;
+  }
+}
