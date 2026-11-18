@@ -328,8 +328,8 @@ function App() {
               </a>
               <div className="flex items-center gap-5">
                 <a href="mailto:chinmayicr27@gmail.com" aria-label="Email" className="hover:text-ink"><Mail size={17} /></a>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-ink"><Linkedin size={17} /></a>
-                <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-ink"><GitBranch size={17} /></a>
+                <a href="https://www.linkedin.com/in/chinmayi-ramakrishna/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-ink"><Linkedin size={17} /></a>
+                <a href="https://github.com/Chinmayi27" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-ink"><GitBranch size={17} /></a>
               </div></div>
             <div className="mt-16 flex gap-8 border-t border-line pt-6">
               <div><p className="font-display text-3xl">10K+</p><p className="mt-1 text-xs text-muted">Platform users</p></div>
